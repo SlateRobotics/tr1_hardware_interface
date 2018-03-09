@@ -1,0 +1,33 @@
+tr1:
+  # Publish all joint states ----------------------------------
+  joint_state_controller:
+     type:         joint_state_controller/JointStateController
+     publish_rate: 50
+
+  arm1_to_arm2_joint_effort_controller:
+     type: effort_controllers/JointEffortController
+     joint: arm1_to_arm2
+
+  arm2_to_arm3_joint_effort_controller:
+     type: effort_controllers/JointEffortController
+     joint: arm2_to_arm3
+
+  arm3_to_arm4_joint_effort_controller:
+     type: effort_controllers/JointEffortController
+     joint: arm3_to_arm4
+
+  arm4_to_arm5_joint_effort_controller:
+     type: effort_controllers/JointEffortController
+     joint: arm4_to_arm5
+
+  arm5_to_arm6_joint_effort_controller:
+     type: effort_controllers/JointEffortController
+     joint: arm5_to_arm6
+
+  arm6_to_arm7_joint_effort_controller:
+     type: effort_controllers/JointEffortController
+     joint: arm6_to_arm7
+
+  arm7_to_arm8_joint_effort_controller:
+     type: effort_controllers/JointEffortController
+     joint: arm7_to_arm8

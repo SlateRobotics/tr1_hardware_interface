@@ -1,0 +1,31 @@
+<launch>
+
+  <!-- GDB functionality -->
+  <arg name="debug" default="false" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+  <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+
+  <arg name="robot_name" default="tr1"/>
+
+  <!-- Assume there is a robot_description parameter to avoid dependency on rrbot_description -->
+  <!-- <param name="robot_description" command="$(find xacro)/xacro.py '$(find tr1_description)/robots/$(arg robot_name).urdf.xacro'" /> -->
+
+  <!-- Load hw interface real settings -->
+  <rosparam file="$(find tr1_hardware_interface)/config/hardware.yaml" command="load"/>
+  <rosparam file="$(find tr1_hardware_interface)/config/controllers.yaml" command="load"/>
+  <!-- Load hardware interface real -->
+  <node name="tr1_hardware_interface" pkg="tr1_hardware_interface" type="tr1_hardware_interface_node"
+        output="screen" launch-prefix="$(arg launch_prefix)"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
+		args="
+			/tr1/arm1_to_arm2_joint_effort_controller
+			/tr1/arm2_to_arm3_joint_effort_controller
+			/tr1/arm3_to_arm4_joint_effort_controller
+			/tr1/arm4_to_arm5_joint_effort_controller
+			/tr1/arm5_to_arm6_joint_effort_controller
+			/tr1/arm6_to_arm7_joint_effort_controller
+			/tr1/arm7_to_arm8_joint_effort_controller
+		"/>
+
+</launch>
