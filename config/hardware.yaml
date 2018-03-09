@@ -10,3 +10,4 @@ tr1:
         - arm5_to_arm6
         - arm6_to_arm7
         - arm7_to_arm8
+        - gripper

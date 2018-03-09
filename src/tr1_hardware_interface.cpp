@@ -1,8 +1,6 @@
 #include <sstream>
 #include <tr1_hardware_interface/tr1_hardware_interface.h>
 #include <tr1cpp/tr1.h>
-#include <tr1cpp/arm.h>
-#include <tr1cpp/joint.h>
 
 namespace tr1_hardware_interface
 {
@@ -81,10 +79,6 @@ namespace tr1_hardware_interface
 		read();
 		controller_manager_->update(ros::Time::now(), elapsed_time_);
 		write(elapsed_time_);
-
-		//double command = effort_joint_interface_.getHandle("arm1_to_arm2").getCommand();
-		//double& command = joint_effort_command_[0];
-		//ROS_INFO("JEC: [%f]", command);
 	}
 
 	void TR1HardwareInterface::read()

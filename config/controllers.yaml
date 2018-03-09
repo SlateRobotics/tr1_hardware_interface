@@ -31,3 +31,7 @@ tr1:
   arm7_to_arm8_joint_effort_controller:
      type: effort_controllers/JointEffortController
      joint: arm7_to_arm8
+
+  gripper_joint_effort_controller:
+     type: effort_controllers/JointEffortController
+     joint: gripper
