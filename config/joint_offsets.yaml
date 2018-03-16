@@ -1,0 +1,19 @@
+tr1:
+  joint_offsets:
+    JointRightShoulderPan: -3.68155
+    JointRightShoulderTilt: -1.129013673
+    JointRightUpperArmRoll: -1.12901
+    JointRightElbowFlex: -6.18501
+    JointRightForearmRoll: -1.27627
+    JointRightWristFlex: -2.45437
+    JointRightWristRoll: 0.0
+    JointRightGripper: 0.0
+  joint_read_ratio:
+    JointRightShoulderPan: 1.0
+    JointRightShoulderTilt: 1.0
+    JointRightUpperArmRoll: 1.076923077
+    JointRightElbowFlex: 0.944444444
+    JointRightForearmRoll: 1.076923077
+    JointRightWristFlex: 0.923076923
+    JointRightWristRoll: 1.0
+    JointRightGripper: 1.0

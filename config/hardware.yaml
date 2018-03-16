@@ -1,13 +1,12 @@
 tr1:
-  # Settings for ros_control hardware interface
   hardware_interface:
      loop_hz: 10 # hz
      joints:
-        - arm1_to_arm2
-        - arm2_to_arm3
-        - arm3_to_arm4
-        - arm4_to_arm5
-        - arm5_to_arm6
-        - arm6_to_arm7
-        - arm7_to_arm8
-        - gripper
+       - JointRightShoulderPan
+       - JointRightShoulderTilt
+       - JointRightUpperArmRoll
+       - JointRightElbowFlex
+       - JointRightForearmRoll
+       - JointRightWristFlex
+       - JointRightWristRoll
+       - JointRightGripper
