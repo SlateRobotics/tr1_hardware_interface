@@ -5,7 +5,7 @@ tr1:
       publish_rate: 50
     trajectory:
       RightPosition:
-        type: position_controllers/JointTrajectoryController
+        type: effort_controllers/JointTrajectoryController
         joints:
           - JointRightShoulderPan
           - JointRightShoulderTilt

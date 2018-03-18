@@ -92,7 +92,7 @@ namespace tr1_hardware_interface
 
 		registerInterface(&joint_state_interface_);
 		registerInterface(&position_joint_interface_);
-		registerInterface(&velocity_joint_interface_);
+		//registerInterface(&velocity_joint_interface_);
 		registerInterface(&effort_joint_interface_);
 		registerInterface(&positionJointSoftLimitsInterface);
 	}
