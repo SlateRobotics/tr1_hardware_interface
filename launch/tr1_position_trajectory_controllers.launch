@@ -16,14 +16,9 @@
         output="screen" launch-prefix="$(arg launch_prefix)"/>
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
 		args="
-			/tr1/controller/effort/JointRightShoulderPan
-			/tr1/controller/effort/JointRightShoulderTilt
-			/tr1/controller/effort/JointRightUpperArmRoll
-			/tr1/controller/effort/JointRightElbowFlex
-			/tr1/controller/effort/JointRightForearmRoll
-			/tr1/controller/effort/JointRightWristFlex
-			/tr1/controller/effort/JointRightWristRoll
-			/tr1/controller/effort/JointRightGripper
+			/tr1/controller/state
+			/tr1/controller/trajectory/RightPosition
+			/tr1/controller/trajectory/LeftPosition
 		"/>
 
 </launch>

@@ -56,22 +56,24 @@ namespace tr1_hardware_interface
 		// Initialize controller
 		for (int i = 0; i < num_joints_; ++i)
 		{
-		  ROS_DEBUG_STREAM_NAMED("constructor","Loading joint name: " << joint_names_[i]);
+			tr1cpp::Joint joint = tr1.getJoint(joint_names_[i]);
 
-			tr1.armRight.joints[i].name = joint_names_[i];
-			nh_.getParam("/tr1/joint_offsets/" + joint_names_[i], tr1.armRight.joints[i].angleOffset);
-			nh_.getParam("/tr1/joint_read_ratio/" + joint_names_[i], tr1.armRight.joints[i].readRatio);
+		  ROS_DEBUG_STREAM_NAMED("constructor","Loading joint name: " << joint.name);
+
+			nh_.getParam("/tr1/joint_offsets/" + joint.name, joint.angleOffset);
+			nh_.getParam("/tr1/joint_read_ratio/" + joint.name, joint.readRatio);
+			tr1.setJoint(joint);
 
 		  // Create joint state interface
-			JointStateHandle jointStateHandle(joint_names_[i], &joint_position_[i], &joint_velocity_[i], &joint_effort_[i]);
+			JointStateHandle jointStateHandle(joint.name, &joint_position_[i], &joint_velocity_[i], &joint_effort_[i]);
 		  joint_state_interface_.registerHandle(jointStateHandle);
 
 		  // Create position joint interface
 			JointHandle jointPositionHandle(jointStateHandle, &joint_position_command_[i]);
 			JointLimits limits;
  	   	SoftJointLimits softLimits;
-			if (getJointLimits(joint_names_[i], nh_, limits) == false) {
-				ROS_ERROR_STREAM("Cannot set joint limits for " << joint_names_[i]);
+			if (getJointLimits(joint.name, nh_, limits) == false) {
+				ROS_ERROR_STREAM("Cannot set joint limits for " << joint.name);
 			} else {
 				PositionJointSoftLimitsHandle jointLimitsHandle(jointPositionHandle, limits, softLimits);
 				positionJointSoftLimitsInterface.registerHandle(jointLimitsHandle);
@@ -112,7 +114,7 @@ namespace tr1_hardware_interface
 		controller_manager_->update(ros::Time::now(), elapsed_time_);
 		write(elapsed_time_);
 
-		ROS_INFO_STREAM(_logInfo);
+		//ROS_INFO_STREAM(_logInfo);
 	}
 
 	void TR1HardwareInterface::read()
@@ -120,13 +122,15 @@ namespace tr1_hardware_interface
 		_logInfo += "Joint State:\n";
 		for (int i = 0; i < num_joints_; i++)
 		{
-			if (tr1.armRight.joints[i].getActuatorType() == ACTUATOR_TYPE_MOTOR)
+			tr1cpp::Joint joint = tr1.getJoint(joint_names_[i]);
+
+			if (joint.getActuatorType() == ACTUATOR_TYPE_MOTOR)
 			{
-				joint_position_[i] = tr1.armRight.joints[i].readAngle();
+				joint_position_[i] = joint.readAngle();
 
 				std::ostringstream jointPositionStr;
 				jointPositionStr << joint_position_[i];
-				_logInfo += "  " + joint_names_[i] + ": " + jointPositionStr.str() + "\n";
+				_logInfo += "  " + joint.name + ": " + jointPositionStr.str() + "\n";
 			}
 		}
 	}
@@ -138,20 +142,22 @@ namespace tr1_hardware_interface
 		_logInfo += "Joint Effort Command:\n";
 		for (int i = 0; i < num_joints_; i++)
 		{
+			tr1cpp::Joint joint = tr1.getJoint(joint_names_[i]);
+
 			double jointEffortMax = 1.0;
 			double jointEffortMin = -1.0;
 
-			nh_.getParam("/tr1/joint_limits/" + joint_names_[i] + "/max_effort", jointEffortMax);
-			nh_.getParam("/tr1/joint_limits/" + joint_names_[i] + "/min_effort", jointEffortMin);
+			nh_.getParam("/tr1/joint_limits/" + joint.name + "/max_effort", jointEffortMax);
+			nh_.getParam("/tr1/joint_limits/" + joint.name + "/min_effort", jointEffortMin);
 
 			if (joint_effort_command_[i] > jointEffortMax) joint_effort_command_[i] = jointEffortMax;
 			if (joint_effort_command_[i] < jointEffortMin) joint_effort_command_[i] = jointEffortMin;
 
-			tr1.armRight.joints[i].actuate(joint_effort_command_[i]);
+			joint.actuate(joint_effort_command_[i]);
 
 			std::ostringstream jointEffortStr;
 			jointEffortStr << joint_effort_command_[i];
-			_logInfo += "  " + joint_names_[i] + ": " + jointEffortStr.str() + "\n";
+			_logInfo += "  " + joint.name + ": " + jointEffortStr.str() + "\n";
 		}
 	}
 }

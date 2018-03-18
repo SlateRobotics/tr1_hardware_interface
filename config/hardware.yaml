@@ -10,3 +10,18 @@ tr1:
        - JointRightWristFlex
        - JointRightWristRoll
        - JointRightGripper
+       - JointLeftShoulderPan
+       - JointLeftShoulderTilt
+       - JointLeftUpperArmRoll
+       - JointLeftElbowFlex
+       - JointLeftForearmRoll
+       - JointLeftWristFlex
+       - JointLeftWristRoll
+       - JointLeftGripper
+       - base_to_wheel1
+       - base_to_wheel2
+       - base_to_wheel3
+       - base_to_wheel4
+       - neck_base_to_neck
+       - neck_to_head
+       - base_to_body

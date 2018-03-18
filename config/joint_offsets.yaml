@@ -8,6 +8,14 @@ tr1:
     JointRightWristFlex: -2.45437
     JointRightWristRoll: 0.0
     JointRightGripper: 0.0
+    JointLeftShoulderPan: 0.0
+    JointLeftShoulderTilt: 0.0
+    JointLeftUpperArmRoll: 0.0
+    JointLeftElbowFlex: 0.0
+    JointLeftForearmRoll: 0.0
+    JointLeftWristFlex: 0.0
+    JointLeftWristRoll: 0.0
+    JointLeftGripper: 0.0
   joint_read_ratio:
     JointRightShoulderPan: 1.0
     JointRightShoulderTilt: 1.0
@@ -17,3 +25,11 @@ tr1:
     JointRightWristFlex: 0.923076923
     JointRightWristRoll: 1.0
     JointRightGripper: 1.0
+    JointLeftShoulderPan: 0.0
+    JointLeftShoulderTilt: 0.0
+    JointLeftUpperArmRoll: 0.0
+    JointLeftElbowFlex: 0.0
+    JointLeftForearmRoll: 0.0
+    JointLeftWristFlex: 0.0
+    JointLeftWristRoll: 0.0
+    JointLeftGripper: 0.0
