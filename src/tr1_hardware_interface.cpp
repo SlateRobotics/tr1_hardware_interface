@@ -143,16 +143,8 @@ namespace tr1_hardware_interface
 		for (int i = 0; i < num_joints_; i++)
 		{
 			tr1cpp::Joint joint = tr1.getJoint(joint_names_[i]);
-
-			double jointEffortMax = 1.0;
-			double jointEffortMin = -1.0;
-
-			nh_.getParam("/tr1/joint_limits/" + joint.name + "/max_effort", jointEffortMax);
-			nh_.getParam("/tr1/joint_limits/" + joint.name + "/min_effort", jointEffortMin);
-
-			if (joint_effort_command_[i] > jointEffortMax) joint_effort_command_[i] = jointEffortMax;
-			if (joint_effort_command_[i] < jointEffortMin) joint_effort_command_[i] = jointEffortMin;
-
+			if (joint_effort_command_[i] > 1) joint_effort_command_[i] = 1;
+			if (joint_effort_command_[i] < -1) joint_effort_command_[i] = -1;
 			joint.actuate(joint_effort_command_[i]);
 
 			std::ostringstream jointEffortStr;

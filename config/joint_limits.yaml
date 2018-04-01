@@ -7,8 +7,8 @@
       max_position: 1.5708
       has_velocity_limits: true
       max_velocity: 2.0
-      has_acceleration_limits: true
-      max_acceleration: 5.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -21,8 +21,8 @@
       max_position: 1.5708
       has_velocity_limits: true
       max_velocity: 2.0
-      has_acceleration_limits: true
-      max_acceleration: 5.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -35,8 +35,8 @@
       max_position: 3.1415
       has_velocity_limits: true
       max_velocity: 2.0
-      has_acceleration_limits: true
-      max_acceleration: 5.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -49,8 +49,8 @@
       max_position: 1.75
       has_velocity_limits: true
       max_velocity: 2.0
-      has_acceleration_limits: true
-      max_acceleration: 5.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -63,8 +63,8 @@
       max_position: 3.1415
       has_velocity_limits: true
       max_velocity: 2.0
-      has_acceleration_limits: true
-      max_acceleration: 5.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -77,8 +77,8 @@
       max_position: 1.75
       has_velocity_limits: true
       max_velocity: 2.0
-      has_acceleration_limits: true
-      max_acceleration: 5.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -91,8 +91,8 @@
       max_position: 2
       has_velocity_limits: true
       max_velocity: 2.0
-      has_acceleration_limits: true
-      max_acceleration: 5.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -105,8 +105,120 @@
       max_position: 1.5708
       has_velocity_limits: true
       max_velocity: 2.0
-      has_acceleration_limits: true
-      max_acceleration: 5.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
+      has_jerk_limits: true
+      max_jerk: 100.0
+      has_effort_limits: true
+      max_effort: 1.0
+      min_effort: -1.0
+
+    JointLeftShoulderPan:
+      has_position_limits: true
+      min_position: -1.0
+      max_position: 1.5708
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
+      has_jerk_limits: true
+      max_jerk: 100.0
+      has_effort_limits: true
+      max_effort: 1.0
+      min_effort: -1.0
+
+    JointLeftShoulderTilt:
+      has_position_limits: true
+      min_position: -1.5708
+      max_position: 1.5708
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
+      has_jerk_limits: true
+      max_jerk: 100.0
+      has_effort_limits: true
+      max_effort: 1.0
+      min_effort: -1.0
+
+    JointLeftUpperArmRoll:
+      has_position_limits: true
+      min_position: -3.1415
+      max_position: 3.1415
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
+      has_jerk_limits: true
+      max_jerk: 100.0
+      has_effort_limits: true
+      max_effort: 1.0
+      min_effort: -1.0
+
+    JointLeftElbowFlex:
+      has_position_limits: true
+      min_position: -1.75
+      max_position: 1.75
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
+      has_jerk_limits: true
+      max_jerk: 100.0
+      has_effort_limits: true
+      max_effort: 1.0
+      min_effort: -1.0
+
+    JointLeftForearmRoll:
+      has_position_limits: true
+      min_position: -3.1415
+      max_position: 3.1415
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
+      has_jerk_limits: true
+      max_jerk: 100.0
+      has_effort_limits: true
+      max_effort: 1.0
+      min_effort: -1.0
+
+    JointLeftWristFlex:
+      has_position_limits: true
+      min_position: -1.75
+      max_position: 1.75
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
+      has_jerk_limits: true
+      max_jerk: 100.0
+      has_effort_limits: true
+      max_effort: 1.0
+      min_effort: -1.0
+
+    JointLeftWristRoll:
+      has_position_limits: true
+      min_position: -2
+      max_position: 2
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
+      has_jerk_limits: true
+      max_jerk: 100.0
+      has_effort_limits: true
+      max_effort: 1.0
+      min_effort: -1.0
+
+    JointLeftGripper:
+      has_position_limits: true
+      min_position: 0
+      max_position: 1.5708
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_acceleration_limits: false
+      max_acceleration: 0.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
