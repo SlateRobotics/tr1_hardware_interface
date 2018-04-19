@@ -145,7 +145,26 @@ namespace tr1_hardware_interface
 			tr1cpp::Joint joint = tr1.getJoint(joint_names_[i]);
 			if (joint_effort_command_[i] > 1) joint_effort_command_[i] = 1;
 			if (joint_effort_command_[i] < -1) joint_effort_command_[i] = -1;
-			joint.actuate(joint_effort_command_[i]);
+
+			double effort = joint_effort_command_[i];
+			uint8_t duration = 15;
+
+			uint8_t durationMax = 15;
+			uint8_t durationMin = 5;
+			double effortMax = 1.00;
+			double effortMin = 0.10;
+
+			if (fabs(effort) < effortMax && fabs(effort) > effortMin) {
+				double effortScale = ((effort - effortMin)/(effortMax - effortMin));
+				effort = effort + effortScale;
+				duration = floor(effortScale * ((durationMax - durationMin) / durationMax * durationMax) + durationMin);
+			} else if (fabs(effort) < effortMin) {
+				continue;
+			}
+
+			if (effort > 1) effort = 1;
+			if (effort < -1) effort = -1;
+			joint.actuate(effort, duration);
 
 			std::ostringstream jointEffortStr;
 			jointEffortStr << joint_effort_command_[i];
@@ -153,3 +172,4 @@ namespace tr1_hardware_interface
 		}
 	}
 }
+

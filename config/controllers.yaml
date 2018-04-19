@@ -15,13 +15,13 @@ tr1:
           - JointRightWristFlex
           - JointRightWristRoll
         gains:
-          JointRightShoulderPan: {p: 8.0, i: 0.0, d: 1.0}
-          JointRightShoulderTilt: {p: 8.0, i: 0.0, d: 1.0}
-          JointRightUpperArmRoll: {p: 2.5, i: 0.0, d: 1.0}
-          JointRightElbowFlex: {p: 8.0, i: 0.0, d: 1.0}
-          JointRightForearmRoll: {p: 5.0, i: 0.0, d: 1.0}
-          JointRightWristFlex: {p: 2.0, i: 0.0, d: 1.0}
-          JointRightWristRoll: {p: 5.0, i: 0.0, d: 1.0}
+          JointRightShoulderPan: {p: 3.0, i: 0.3, d: 0.0, i_clamp: 1.0}
+          JointRightShoulderTilt: {p: 15.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+          JointRightUpperArmRoll: {p: 15.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+          JointRightElbowFlex: {p: 15.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+          JointRightForearmRoll: {p: 0.0, i: 0.0, d: 0.0}
+          JointRightWristFlex: {p: 0.0, i: 0.0, d: 0.0}
+          JointRightWristRoll: {p: 0.0, i: 0.0, d: 0.0}
       LeftPosition:
         type: position_controllers/JointTrajectoryController
         joints:
@@ -44,27 +44,29 @@ tr1:
       JointRightShoulderPan:
         type: effort_controllers/JointPositionController
         joint: JointRightShoulderPan
-        pid: {p: 10.0, i: 0.0, d: 1.0}
+        pid: {p: 3.0, i: 0.3, d: 0.0, i_clamp: 1.0}
       JointRightShoulderTilt:
         type: effort_controllers/JointPositionController
         joint: JointRightShoulderTilt
-        pid: {p: 10.0, i: 0.0, d: 1.0}
+        pid: {p: 15.0, i: 0.0, d: 1.0, i_clamp: 0.0}
       JointRightUpperArmRoll:
         type: effort_controllers/JointPositionController
         joint: JointRightUpperArmRoll
-        pid: {p: 2.5, i: 0.0, d: 1.0}
+        pid: {p: 15.0, i: 0.0, d: 1.0, i_clamp: 0.0}
       JointRightElbowFlex:
         type: effort_controllers/JointPositionController
         joint: JointRightElbowFlex
-        pid: {p: 10.0, i: 0.0, d: 1.0}
+        pid: {p: 15.0, i: 0.0, d: 1.0, i_clamp: 0.0}
       JointRightForearmRoll:
         type: effort_controllers/JointPositionController
         joint: JointRightForearmRoll
-        pid: {p: 5.0, i: 0.0, d: 1.0}
+        #pid: {p: 3.0, i: 0.3, d: 0.0, i_clamp: 1.0}
+        pid: {p: 0.0, i: 0.0, d: 0.0}
       JointRightWristFlex:
         type: effort_controllers/JointPositionController
         joint: JointRightWristFlex
-        pid: {p: 5.0, i: 0.0, d: 1.0}
+        #pid: {p: 3.0, i: 0.3, d: 0.0, i_clamp: 1.0}
+        pid: {p: 0.0, i: 0.0, d: 0.0}
       JointLeftShoulderPan:
         type: effort_controllers/JointPositionController
         joint: JointLeftShoulderPan
