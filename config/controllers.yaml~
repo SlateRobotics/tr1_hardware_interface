@@ -60,7 +60,8 @@ tr1:
       JointRightForearmRoll:
         type: effort_controllers/JointPositionController
         joint: JointRightForearmRoll
-        pid: {p: 1.5, i: 0.0, d: 0.1, i_clamp: 0.0}
+        pid: {p: 3.0, i: 0.0, d: 1.0, i_clamp: 1.0}
+        #pid: {p: 0.0, i: 0.0, d: 0.0}
       JointRightWristFlex:
         type: effort_controllers/JointPositionController
         joint: JointRightWristFlex
@@ -91,21 +92,6 @@ tr1:
         joint: JointLeftWristFlex
         pid: {p: 5.0, i: 0.0, d: 1.0}
     effort:
-      JointTorsoExtension:
-        type: effort_controllers/JointEffortController
-        joint: JointTorsoExtension
-      JointBaseWheelFR:
-        type: effort_controllers/JointEffortController
-        joint: JointBaseWheelFR
-      JointBaseWheelFL:
-        type: effort_controllers/JointEffortController
-        joint: JointBaseWheelFL
-      JointBaseWheelBR:
-        type: effort_controllers/JointEffortController
-        joint: JointBaseWheelBR
-      JointBaseWheelBL:
-        type: effort_controllers/JointEffortController
-        joint: JointBaseWheelBL
       JointRightShoulderPan:
         type: effort_controllers/JointEffortController
         joint: JointRightShoulderPan

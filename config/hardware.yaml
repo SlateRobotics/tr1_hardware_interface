@@ -18,10 +18,10 @@ tr1:
        - JointLeftWristFlex
        - JointLeftWristRoll
        - JointLeftGripper
-       - base_to_wheel1
-       - base_to_wheel2
-       - base_to_wheel3
-       - base_to_wheel4
+       - JointBaseWheelFL
+       - JointBaseWheelFR
+       - JointBaseWheelBL
+       - JointBaseWheelBR
        - neck_base_to_neck
        - neck_to_head
-       - base_to_body
+       - JointTorsoExtension

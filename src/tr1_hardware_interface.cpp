@@ -162,6 +162,10 @@ namespace tr1_hardware_interface
 				continue;
 			}
 
+			if (joint.name.find("Base") != std::string::npos) {
+				duration = 15;
+			}
+
 			if (effort > 1) effort = 1;
 			if (effort < -1) effort = -1;
 			joint.actuate(effort, duration);
