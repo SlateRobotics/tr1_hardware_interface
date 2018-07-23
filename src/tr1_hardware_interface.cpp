@@ -148,7 +148,8 @@ namespace tr1_hardware_interface
 
 			double effort = joint_effort_command_[i];
 			uint8_t duration = 15;
-
+			joint.actuate(effort, duration);
+/*
 			uint8_t durationMax = 15;
 			uint8_t durationMin = 5;
 			double effortMax = 1.00;
@@ -169,7 +170,7 @@ namespace tr1_hardware_interface
 			if (effort > 1) effort = 1;
 			if (effort < -1) effort = -1;
 			joint.actuate(effort, duration);
-
+*/
 			std::ostringstream jointEffortStr;
 			jointEffortStr << joint_effort_command_[i];
 			_logInfo += "  " + joint.name + ": " + jointEffortStr.str() + "\n";

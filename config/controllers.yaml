@@ -90,6 +90,14 @@ tr1:
         type: effort_controllers/JointPositionController
         joint: JointLeftWristFlex
         pid: {p: 5.0, i: 0.0, d: 1.0}
+      neck_to_head:
+        type: effort_controllers/JointPositionController
+        joint: neck_to_head
+        pid: {p: 5.0, i: 0.0, d: 1.0}
+      neck_base_to_neck:
+        type: effort_controllers/JointPositionController
+        joint: neck_base_to_neck
+        pid: {p: 5.0, i: 0.0, d: 1.0}
     effort:
       JointTorsoExtension:
         type: effort_controllers/JointEffortController
@@ -154,3 +162,11 @@ tr1:
       JointLeftGripper:
         type: effort_controllers/JointEffortController
         joint: JointLeftGripper
+      neck_to_head:
+        type: effort_controllers/JointEffortController
+        joint: neck_to_head
+        pid: {p: 5.0, i: 0.0, d: 1.0}
+      neck_base_to_neck:
+        type: effort_controllers/JointEffortController
+        joint: neck_base_to_neck
+        pid: {p: 5.0, i: 0.0, d: 1.0}
