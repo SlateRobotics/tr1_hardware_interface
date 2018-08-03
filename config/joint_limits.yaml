@@ -6,7 +6,7 @@
       min_position: -1.0
       max_position: 1.5708
       has_velocity_limits: true
-      max_velocity: 2.0
+      max_velocity: 0.2932
       has_acceleration_limits: false
       max_acceleration: 0.0
       has_jerk_limits: true
@@ -20,7 +20,7 @@
       min_position: -1.4
       max_position: 1.5708
       has_velocity_limits: true
-      max_velocity: 2.0
+      max_velocity: 0.1
       has_acceleration_limits: false
       max_acceleration: 0.0
       has_jerk_limits: true
@@ -31,10 +31,10 @@
 
     JointRightUpperArmRoll:
       has_position_limits: true
-      min_position: -3.1415
-      max_position: 3.1415
+      min_position: -3.0000
+      max_position: 3.0000
       has_velocity_limits: true
-      max_velocity: 2.0
+      max_velocity: 0.25
       has_acceleration_limits: false
       max_acceleration: 0.0
       has_jerk_limits: true
@@ -48,7 +48,7 @@
       min_position: -1.5708
       max_position: 1.5708
       has_velocity_limits: true
-      max_velocity: 2.0
+      max_velocity: 0.1
       has_acceleration_limits: false
       max_acceleration: 0.0
       has_jerk_limits: true
@@ -59,10 +59,10 @@
 
     JointRightForearmRoll:
       has_position_limits: true
-      min_position: -3.1415
-      max_position: 3.1415
+      min_position: -3.0000
+      max_position: 3.0000
       has_velocity_limits: true
-      max_velocity: 2.0
+      max_velocity: 1.4661
       has_acceleration_limits: false
       max_acceleration: 0.0
       has_jerk_limits: true
@@ -76,7 +76,7 @@
       min_position: -1.75
       max_position: 1.75
       has_velocity_limits: true
-      max_velocity: 2.0
+      max_velocity: 0.7330
       has_acceleration_limits: false
       max_acceleration: 0.0
       has_jerk_limits: true
@@ -90,14 +90,14 @@
       min_position: -2
       max_position: 2
       has_velocity_limits: true
-      max_velocity: 2.0
+      max_velocity: 7.5398
       has_acceleration_limits: false
       max_acceleration: 0.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
-      max_effort: 1.0
-      min_effort: -1.0
+      max_effort: 1.5708
+      min_effort: -1.5708
 
     JointRightGripper:
       has_position_limits: true
@@ -143,8 +143,8 @@
 
     JointLeftUpperArmRoll:
       has_position_limits: true
-      min_position: -3.1415
-      max_position: 3.1415
+      min_position: -3.0000
+      max_position: 3.0000
       has_velocity_limits: true
       max_velocity: 2.0
       has_acceleration_limits: false
@@ -171,8 +171,8 @@
 
     JointLeftForearmRoll:
       has_position_limits: true
-      min_position: -3.1415
-      max_position: 3.1415
+      min_position: -3.0000
+      max_position: 3.0000
       has_velocity_limits: true
       max_velocity: 2.0
       has_acceleration_limits: false

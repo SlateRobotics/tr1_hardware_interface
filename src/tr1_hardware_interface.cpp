@@ -132,6 +132,8 @@ namespace tr1_hardware_interface
 				jointPositionStr << joint_position_[i];
 				_logInfo += "  " + joint.name + ": " + jointPositionStr.str() + "\n";
 			}
+
+			tr1.setJoint(joint);
 		}
 	}
 
@@ -143,34 +145,19 @@ namespace tr1_hardware_interface
 		for (int i = 0; i < num_joints_; i++)
 		{
 			tr1cpp::Joint joint = tr1.getJoint(joint_names_[i]);
-			if (joint_effort_command_[i] > 1) joint_effort_command_[i] = 1;
-			if (joint_effort_command_[i] < -1) joint_effort_command_[i] = -1;
+			//if (joint_effort_command_[i] > 1) joint_effort_command_[i] = 1;
+			//if (joint_effort_command_[i] < -1) joint_effort_command_[i] = -1;
 
 			double effort = joint_effort_command_[i];
 			uint8_t duration = 15;
-			joint.actuate(effort, duration);
-/*
-			uint8_t durationMax = 15;
-			uint8_t durationMin = 5;
-			double effortMax = 1.00;
-			double effortMin = 0.10;
 
-			if (fabs(effort) < effortMax && fabs(effort) > effortMin) {
-				double effortScale = ((effort - effortMin)/(effortMax - effortMin));
-				effort = effort + effortScale;
-				duration = floor(effortScale * ((durationMax - durationMin) / durationMax * durationMax) + durationMin);
-			} else if (fabs(effort) < effortMin) {
-				continue;
+			if (joint.getActuatorType() == 1) { // servo
+				double previousEffort = joint.getPreviousEffort();
+				effort += previousEffort;
 			}
-
-			if (joint.name.find("Base") != std::string::npos) {
-				duration = 15;
-			}
-
-			if (effort > 1) effort = 1;
-			if (effort < -1) effort = -1;
+			
 			joint.actuate(effort, duration);
-*/
+
 			std::ostringstream jointEffortStr;
 			jointEffortStr << joint_effort_command_[i];
 			_logInfo += "  " + joint.name + ": " + jointEffortStr.str() + "\n";

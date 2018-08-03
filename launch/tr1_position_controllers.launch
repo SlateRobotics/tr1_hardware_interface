@@ -22,7 +22,7 @@
 			/tr1/controller/position/JointRightElbowFlex
 			/tr1/controller/position/JointRightForearmRoll
 			/tr1/controller/position/JointRightWristFlex
-			/tr1/controller/effort/JointRightWristRoll
+			/tr1/controller/position/JointRightWristRoll
 			/tr1/controller/effort/JointRightGripper
 		"/>
 
