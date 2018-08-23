@@ -1,0 +1,199 @@
+tr1:
+  controller:
+    state:
+      type: joint_state_controller/JointStateController
+      publish_rate: 50
+    trajectory:
+      RightPosition:
+        type: effort_controllers/JointTrajectoryController
+        joints:
+          - JointRightShoulderPan
+          - JointRightShoulderTilt
+          - JointRightUpperArmRoll
+          - JointRightElbowFlex
+          - JointRightForearmRoll
+          - JointRightWristFlex
+          - JointRightWristRoll
+        gains:
+          JointRightShoulderPan: {p: 8.5, i: 0.3, d: 0.1, i_clamp: 1.0}
+          JointRightShoulderTilt: {p: 15.0, i: 0.7, d: 1.0, i_clamp: 0.0}
+          JointRightUpperArmRoll: {p: 15.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+          JointRightElbowFlex: {p: 15.0, i: 1.2, d: 1.0, i_clamp: 0.0}
+          JointRightForearmRoll: {p: 1.5, i: 0.2, d: 0.0, i_clamp: 1.0}
+          JointRightWristFlex: {p: 3.3, i: 0.0, d: 1.0, i_clamp: 1.0}
+          JointRightWristRoll: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+        constraints:
+          goal_time: 10.0
+          JointRightShoulderPan:
+            goal: 0.1
+          JointRightShoulderTilt:
+            goal: 0.1
+          JointRightUpperArmRoll:
+            goal: 0.1
+          JointRightElbowFlex:
+            goal: 0.1
+          JointRightForearmRoll:
+            goal: 0.1
+          JointRightWristFlex:
+            goal: 0.1
+          JointRightWristRoll:
+            goal: 0.1
+      LeftPosition:
+        type: effort_controllers/JointTrajectoryController
+        joints:
+          - JointLeftShoulderPan
+          - JointLeftShoulderTilt
+          - JointLeftUpperArmRoll
+          - JointLeftElbowFlex
+          - JointLeftForearmRoll
+          - JointLeftWristFlex
+          - JointLeftWristRoll
+        gains:
+          JointLeftShoulderPan: {p: 10.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+          JointLeftShoulderTilt: {p: 70.0, i: 2.0, d: 1.0, i_clamp: 1.0}
+          JointLeftUpperArmRoll: {p: 10.5, i: 15.0, d: 1.0, i_clamp: 1.0}
+          JointLeftElbowFlex:  {p: 10.0, i: 3.0, d: 1.0, i_clamp: 0.0}
+          JointLeftForearmRoll: {p: 5.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+          JointLeftWristFlex: {p: 3.0, i: 1.0, d: 0.0, i_clamp: 0.0}
+          JointLeftWristRoll: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+    position:
+      JointRightShoulderPan:
+        type: effort_controllers/JointPositionController
+        joint: JointRightShoulderPan
+        pid: {p: 8.5, i: 0.3, d: 0.1, i_clamp: 1.0}
+      JointRightShoulderTilt:
+        type: effort_controllers/JointPositionController
+        joint: JointRightShoulderTilt
+        pid: {p: 15.0, i: 0.7, d: 1.0, i_clamp: 0.0}
+      JointRightUpperArmRoll:
+        type: effort_controllers/JointPositionController
+        joint: JointRightUpperArmRoll
+        pid: {p: 15.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+      JointRightElbowFlex:
+        type: effort_controllers/JointPositionController
+        joint: JointRightElbowFlex
+        pid: {p: 15.0, i: 1.2, d: 1.0, i_clamp: 0.0}
+      JointRightForearmRoll:
+        type: effort_controllers/JointPositionController
+        joint: JointRightForearmRoll
+        pid: {p: 0.8, i: 0.2, d: 0.0, i_clamp: 1.0}
+      JointRightWristFlex:
+        type: effort_controllers/JointPositionController
+        joint: JointRightWristFlex
+        pid: {p: 3.3, i: 0.0, d: 1.0, i_clamp: 1.0}
+      JointRightWristRoll:
+        type: effort_controllers/JointPositionController
+        joint: JointRightWristRoll
+        pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+      JointRightGripper:
+        type: effort_controllers/JointPositionController
+        joint: JointRightGripper
+        pid: {p: 3.0, i: 0.0, d: 1.0, i_clamp: 1.0}
+      JointLeftShoulderPan:
+        type: effort_controllers/JointPositionController
+        joint: JointLeftShoulderPan
+        pid: {p: 10.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+      JointLeftShoulderTilt:
+        type: effort_controllers/JointPositionController
+        joint: JointLeftShoulderTilt
+        pid: {p: 70.0, i: 2.0, d: 1.0, i_clamp: 1.0}
+      JointLeftUpperArmRoll:
+        type: effort_controllers/JointPositionController
+        joint: JointLeftUpperArmRoll
+        pid: {p: 10.5, i: 15.0, d: 1.0, i_clamp: 1.0}
+      JointLeftElbowFlex:
+        type: effort_controllers/JointPositionController
+        joint: JointLeftElbowFlex
+        pid: {p: 10.0, i: 3.0, d: 1.0, i_clamp: 0.0}
+      JointLeftForearmRoll:
+        type: effort_controllers/JointPositionController
+        joint: JointLeftForearmRoll
+        pid: {p: 5.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+      JointLeftWristFlex:
+        type: effort_controllers/JointPositionController
+        joint: JointLeftWristFlex
+        pid: {p: 3.0, i: 1.0, d: 0.0, i_clamp: 0.0}
+      JointLeftWristRoll:
+        type: effort_controllers/JointPositionController
+        joint: JointLeftWristRoll
+        pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+      neck_to_head:
+        type: effort_controllers/JointPositionController
+        joint: neck_to_head
+        pid: {p: 5.0, i: 0.0, d: 1.0}
+      neck_base_to_neck:
+        type: effort_controllers/JointPositionController
+        joint: neck_base_to_neck
+        pid: {p: 5.0, i: 0.0, d: 1.0}
+    effort:
+      JointTorsoExtension:
+        type: effort_controllers/JointEffortController
+        joint: JointTorsoExtension
+      JointBaseWheelFR:
+        type: effort_controllers/JointEffortController
+        joint: JointBaseWheelFR
+      JointBaseWheelFL:
+        type: effort_controllers/JointEffortController
+        joint: JointBaseWheelFL
+      JointBaseWheelBR:
+        type: effort_controllers/JointEffortController
+        joint: JointBaseWheelBR
+      JointBaseWheelBL:
+        type: effort_controllers/JointEffortController
+        joint: JointBaseWheelBL
+      JointRightShoulderPan:
+        type: effort_controllers/JointEffortController
+        joint: JointRightShoulderPan
+      JointRightShoulderTilt:
+        type: effort_controllers/JointEffortController
+        joint: JointRightShoulderTilt
+      JointRightUpperArmRoll:
+        type: effort_controllers/JointEffortController
+        joint: JointRightUpperArmRoll
+      JointRightElbowFlex:
+        type: effort_controllers/JointEffortController
+        joint: JointRightElbowFlex
+      JointRightForearmRoll:
+        type: effort_controllers/JointEffortController
+        joint: JointRightForearmRoll
+      JointRightWristFlex:
+        type: effort_controllers/JointEffortController
+        joint: JointRightWristFlex
+      JointRightWristRoll:
+        type: effort_controllers/JointEffortController
+        joint: JointRightWristRoll
+      JointRightGripper:
+        type: effort_controllers/JointEffortController
+        joint: JointRightGripper
+      JointLeftShoulderPan:
+        type: effort_controllers/JointEffortController
+        joint: JointLeftShoulderPan
+      JointLeftShoulderTilt:
+        type: effort_controllers/JointEffortController
+        joint: JointLeftShoulderTilt
+      JointLeftUpperArmRoll:
+        type: effort_controllers/JointEffortController
+        joint: JointLeftUpperArmRoll
+      JointLeftElbowFlex:
+        type: effort_controllers/JointEffortController
+        joint: JointLeftElbowFlex
+      JointLeftForearmRoll:
+        type: effort_controllers/JointEffortController
+        joint: JointLeftForearmRoll
+      JointLeftWristFlex:
+        type: effort_controllers/JointEffortController
+        joint: JointLeftWristFlex
+      JointLeftWristRoll:
+        type: effort_controllers/JointEffortController
+        joint: JointLeftWristRoll
+      JointLeftGripper:
+        type: effort_controllers/JointEffortController
+        joint: JointLeftGripper
+      neck_to_head:
+        type: effort_controllers/JointEffortController
+        joint: neck_to_head
+        pid: {p: 5.0, i: 0.0, d: 1.0}
+      neck_base_to_neck:
+        type: effort_controllers/JointEffortController
+        joint: neck_base_to_neck
+        pid: {p: 5.0, i: 0.0, d: 1.0}

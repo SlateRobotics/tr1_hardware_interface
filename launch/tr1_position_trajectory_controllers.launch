@@ -18,6 +18,7 @@
 		args="
 			/tr1/controller/state
 			/tr1/controller/trajectory/RightPosition
+			/tr1/controller/trajectory/LeftPosition
 		"/>
 
 </launch>
