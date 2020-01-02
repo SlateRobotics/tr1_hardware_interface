@@ -28,7 +28,7 @@
 			/tr1/controller/effort/JointRightGripper
 			/tr1/controller/effort/JointBaseWheelFR
 			/tr1/controller/effort/JointBaseWheelFL
-     			/tr1/controller/effort/JointBaseWheelBR
+			/tr1/controller/effort/JointBaseWheelBR
 			/tr1/controller/effort/JointBaseWheelBL
 			/tr1/controller/effort/JointTorsoExtension
 			/tr1/controller/effort/neck_base_to_neck
